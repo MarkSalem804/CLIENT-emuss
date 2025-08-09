@@ -1,0 +1,230 @@
+/* EMUSS Calendar Styles - Fresh Start */
+
+/* Basic calendar container */
+.emuss-calendar {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Calendar Toolbar */
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* All Toolbar Buttons - Base Style */
+.rbc-toolbar button {
+  background: white;
+  border: 1px solid #d1fae5;
+  color: #065f46;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  margin: 0 2px;
+  outline: none !important;
+  cursor: pointer;
+}
+
+/* Hover State */
+.rbc-toolbar button:hover {
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.15);
+  color: #047857;
+}
+
+/* Focus State */
+.rbc-toolbar button:focus {
+  background: #d1fae5;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  color: #047857;
+}
+
+/* Active/Pressed State */
+.rbc-toolbar button:active {
+  background: #047857;
+  border-color: #065f46;
+  color: white;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+/* Active Button (Selected View) */
+.rbc-toolbar button.rbc-active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.rbc-toolbar button.rbc-active:active {
+  background: linear-gradient(135deg, #047857, #065f46);
+  color: white;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Toolbar Label (Month/Year) */
+.rbc-toolbar-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 16px;
+}
+
+/* Calendar Headers - Days of Week (Sun to Sat) */
+.rbc-header {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 8px;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Month view headers */
+.rbc-month-view .rbc-header {
+  border-bottom: 2px solid #065f46;
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Week/Day view headers */
+.rbc-time-header .rbc-header,
+.rbc-time-view .rbc-header {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  border-right: 1px solid #065f46 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  padding: 12px 8px !important;
+  height: auto !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.rbc-time-header .rbc-header:last-child,
+.rbc-time-view .rbc-header:last-child {
+  border-right: none !important;
+}
+
+/* Week view specific styling */
+.rbc-time-header {
+  border-bottom: 2px solid #065f46 !important;
+  height: auto !important;
+  min-height: 48px !important;
+  overflow: visible !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.rbc-time-header .rbc-header + .rbc-header {
+  border-left: 1px solid #065f46;
+}
+
+/* Ensure the header row has proper height */
+.rbc-time-header .rbc-row {
+  min-height: 48px !important;
+  height: auto !important;
+}
+
+/* Fix any clipping issues */
+.rbc-time-view .rbc-time-header-content {
+  height: auto !important;
+  min-height: 48px !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove white space below headers */
+.rbc-time-view .rbc-time-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.rbc-time-view .rbc-allday-cell {
+  display: none !important; /* Hide all-day section if not needed */
+}
+
+/* Ensure no gaps between header and content */
+.rbc-time-view .rbc-time-header + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Time slot labels in week view */
+.rbc-time-slot {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rbc-timeslot-group {
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Week view time gutter */
+.rbc-time-gutter {
+  background: #f9fafb;
+  border-right: 1px solid #d1d5db;
+}
+
+/* Agenda View - Column width adjustments for headers and cells */
+
+/* Header columns - match the data column widths */
+.rbc-agenda-view thead th:nth-child(1) {
+  width: 180px !important;
+  min-width: 180px !important;
+}
+
+.rbc-agenda-view thead th:nth-child(2) {
+  width: 250px !important;
+  min-width: 250px !important;
+}
+
+.rbc-agenda-view thead th:nth-child(3) {
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
+}
+
+/* Data columns */
+.rbc-agenda-view .rbc-agenda-date-cell {
+  width: 180px !important;
+  min-width: 180px !important;
+}
+
+.rbc-agenda-view .rbc-agenda-time-cell {
+  width: 250px !important;
+  min-width: 250px !important;
+}
+
+.rbc-agenda-view .rbc-agenda-event-cell {
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
