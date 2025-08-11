@@ -112,7 +112,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex relative overflow-hidden">
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row relative overflow-hidden">
       {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute right-0 top-0 w-96 h-96 bg-gradient-to-bl from-emerald-400 to-emerald-600 rounded-full -mr-48 -mt-48 opacity-15"></div>
@@ -122,10 +122,10 @@ const Login = () => {
       </div>
 
       {/* Navigation Links - Top Left */}
-      <div className="absolute top-6 left-6 flex space-x-6 z-10">
+      <div className="absolute top-4 lg:top-6 left-4 lg:left-6 flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-6 z-10">
         <a
           href="/about-us"
-          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors"
+          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors text-sm lg:text-base"
         >
           About Us
         </a>
@@ -133,7 +133,7 @@ const Login = () => {
           href="https://wp.depedimuscity.com/?page_id=70"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors"
+          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors text-sm lg:text-base"
         >
           Citizen's Charter
         </a>
@@ -141,45 +141,47 @@ const Login = () => {
           href="https://csm.depedimuscity.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors"
+          className="text-gray-700 font-medium hover:text-emerald-600 transition-colors text-sm lg:text-base"
         >
           Feedback
         </a>
       </div>
 
       {/* Logos - Bottom Right */}
-      <div className="absolute bottom-6 right-6 flex items-center space-x-4 z-10">
+      <div className="absolute bottom-4 lg:bottom-6 right-4 lg:right-6 flex items-center space-x-2 lg:space-x-4 z-10">
         <img
           src={depedImage}
           alt="DepEd"
-          className="h-12 w-auto object-contain"
+          className="h-8 lg:h-12 w-auto object-contain"
         />
         <img
           src={bagongPilipinasLogo}
           alt="Bagong Pilipinas"
-          className="h-16 w-auto object-contain"
+          className="h-12 lg:h-16 w-auto object-contain"
         />
         <img
           src={depedLogo}
           alt="DepEd Logo"
-          className="h-12 w-auto object-contain"
+          className="h-8 lg:h-12 w-auto object-contain"
         />
       </div>
 
       {/* Left Side - Login Form */}
-      <div className="w-1/2 flex items-center justify-center p-8 relative z-10">
-        <div className="max-w-md w-full space-y-8">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 lg:p-8 relative z-10">
+        <div className="max-w-md w-full space-y-6 lg:space-y-8">
           {/* Logo and Title */}
           <div className="text-center">
-            <div className="mx-auto h-16 w-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mb-6">
+            <div className="mx-auto h-12 w-12 lg:h-16 lg:w-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mb-4 lg:mb-6">
               <img
                 src={depedLogo}
                 alt="DepEd Logo"
-                className="h-16 w-16 object-contain rounded-full"
+                className="h-12 w-12 lg:h-16 lg:w-16 object-contain rounded-full"
               />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">EMUSS</h2>
-            <p className="text-gray-700 mb-1">
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+              EMUSS
+            </h2>
+            <p className="text-xs lg:text-sm text-gray-700 mb-1">
               ELECTRONIC MEDICAL RECORDS AND UNIFIED SCHEDULING SYSTEM
             </p>
           </div>
@@ -443,10 +445,10 @@ const Login = () => {
       </div>
 
       {/* Right Side - Slideshow */}
-      <div className="w-1/2 relative overflow-hidden">
+      <div className="w-full lg:w-1/2 relative overflow-hidden min-h-[500px] lg:min-h-screen">
         {/* Latest News Title */}
-        <div className="absolute top-8 left-8 z-20">
-          <h2 className="text-3xl font-bold text-white drop-shadow-lg">
+        <div className="absolute top-4 lg:top-8 left-4 lg:left-8 z-20">
+          <h2 className="text-xl lg:text-3xl font-bold text-white drop-shadow-lg">
             Latest News
           </h2>
         </div>
@@ -467,32 +469,31 @@ const Login = () => {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 text-center w-full px-12">
+                <div className="relative z-10 text-center w-full px-4 lg:px-12">
                   <div className="mb-4">
-                    <div className="w-[48rem] h-[32rem] mx-auto flex items-center justify-center bg-white/10 rounded-2xl backdrop-blur-sm">
+                    <div className="w-full max-w-2xl lg:max-w-4xl h-64 lg:h-96 mx-auto flex items-center justify-center bg-white/10 rounded-2xl backdrop-blur-sm">
                       <img
                         src={slides[currentSlide].image}
                         alt={slides[currentSlide].title}
-                        className="object-contain rounded-xl drop-shadow-2xl"
-                        style={{ width: "46rem", height: "30rem" }}
+                        className="object-contain rounded-xl drop-shadow-2xl w-full h-full"
                       />
                     </div>
                   </div>
-                  <h3 className="text-3xl font-bold mb-4">
+                  <h3 className="text-xl lg:text-3xl font-bold mb-4">
                     {slides[currentSlide].title}
                   </h3>
-                  <p className="text-lg opacity-90 leading-relaxed">
+                  <p className="text-sm lg:text-lg opacity-90 leading-relaxed max-w-md lg:max-w-2xl mx-auto">
                     {slides[currentSlide].description}
                   </p>
                 </div>
 
                 {/* Navigation Dots */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                <div className="absolute bottom-4 lg:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
                   {slides.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      className={`w-2 lg:w-3 h-2 lg:h-3 rounded-full transition-all duration-300 ${
                         index === currentSlide
                           ? "bg-white scale-125"
                           : "bg-white/50 hover:bg-white/75"
@@ -508,10 +509,10 @@ const Login = () => {
                       (prev) => (prev - 1 + slides.length) % slides.length
                     )
                   }
-                  className="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+                  className="absolute left-2 lg:left-6 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-12 lg:h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
                 >
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-4 h-4 lg:w-6 lg:h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -528,10 +529,10 @@ const Login = () => {
                   onClick={() =>
                     setCurrentSlide((prev) => (prev + 1) % slides.length)
                   }
-                  className="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+                  className="absolute right-2 lg:right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 lg:w-12 lg:h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
                 >
                   <svg
-                    className="w-6 h-6 text-white"
+                    className="w-4 h-4 lg:w-6 lg:h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

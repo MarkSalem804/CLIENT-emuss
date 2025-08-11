@@ -25,7 +25,7 @@ const Inventory = () => {
       {/* Work in Progress Component */}
       <WorkInProgress
         icon={Package}
-        title="Inventory Managemen"
+        title="Inventory Management"
         description="Our inventory management will help you track medical supplies, equipment maintenance schedules, pharmaceutical stock levels, and automated reorder alerts."
       />
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, useCallback } from "react";
@@ -434,7 +435,7 @@ const EMUSSCalendar = ({
 
   return (
     <div
-      className={`bg-white rounded-2xl shadow-lg border border-emerald-200/30 ${className}`}
+      className={`bg-white rounded-2xl shadow-xl border-2 border-emerald-300/80 ${className}`}
     >
       {/* Calendar Header */}
       <div className="p-6 border-b border-emerald-200/30">
