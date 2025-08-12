@@ -639,7 +639,7 @@ const EMUSSCalendar = ({
                         onChange={(e) =>
                           setNewEvent({ ...newEvent, title: e.target.value })
                         }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         placeholder="Enter event title"
                       />
                     </div>
@@ -654,7 +654,7 @@ const EMUSSCalendar = ({
                         onChange={(e) =>
                           setNewEvent({ ...newEvent, type: e.target.value })
                         }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                       >
                         <option value="consultation">
                           Medical Consultation
@@ -686,7 +686,7 @@ const EMUSSCalendar = ({
                               start: new Date(e.target.value),
                             })
                           }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         />
                       </div>
                       <div>
@@ -704,7 +704,7 @@ const EMUSSCalendar = ({
                               end: new Date(e.target.value),
                             })
                           }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         />
                       </div>
                     </div>
@@ -720,7 +720,7 @@ const EMUSSCalendar = ({
                         onChange={(e) =>
                           setNewEvent({ ...newEvent, patient: e.target.value })
                         }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         placeholder="Patient name or attendees"
                       />
                     </div>
@@ -735,7 +735,7 @@ const EMUSSCalendar = ({
                         onChange={(e) =>
                           setNewEvent({ ...newEvent, doctor: e.target.value })
                         }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         placeholder="Doctor or responsible person"
                       />
                     </div>
@@ -750,7 +750,7 @@ const EMUSSCalendar = ({
                         onChange={(e) =>
                           setNewEvent({ ...newEvent, location: e.target.value })
                         }
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-300 focus:ring-1 focus:ring-green-300"
                         placeholder="Room or location"
                       />
                     </div>

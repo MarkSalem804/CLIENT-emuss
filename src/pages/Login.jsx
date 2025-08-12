@@ -231,10 +231,10 @@ const Login = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`block w-full pl-10 pr-3 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors ${
+                    className={`block w-full pl-10 pr-3 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-300 transition-colors ${
                       error
                         ? "border-red-300 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300"
+                        : "border-gray-300 focus:border-green-300"
                     }`}
                     placeholder="Enter your email"
                   />
@@ -276,10 +276,10 @@ const Login = () => {
                     required
                     value={formData.password}
                     onChange={handleInputChange}
-                    className={`block w-full pl-10 pr-12 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors ${
+                    className={`block w-full pl-10 pr-12 py-3 border rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-300 transition-colors ${
                       error
                         ? "border-red-300 focus:ring-red-500 focus:border-red-500"
-                        : "border-gray-300"
+                        : "border-gray-300 focus:border-green-300"
                     }`}
                     placeholder="Enter your password"
                   />
@@ -334,7 +334,7 @@ const Login = () => {
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-emerald-600 focus:ring-green-300 border-gray-300 rounded"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
                   />
