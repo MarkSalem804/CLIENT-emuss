@@ -10,7 +10,6 @@ import {
   CheckCircle,
   AlertCircle,
   UserPlus,
-  UserEdit,
 } from "lucide-react";
 import { userService } from "../services/users-service";
 import {
@@ -811,7 +810,7 @@ const UsersManagement = () => {
                 <h3 className="text-xl font-bold text-slate-800 flex items-center gap-3">
                   {selectedUser ? (
                     <>
-                      <UserEdit className="w-6 h-6 text-emerald-600" />
+                      <Edit className="w-6 h-6 text-emerald-600" />
                       Edit User
                     </>
                   ) : (
