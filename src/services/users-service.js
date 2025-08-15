@@ -66,7 +66,9 @@ export const userService = {
   // User Login
   async loginUser(credentials) {
     try {
+      console.log("UserService: Attempting login with:", credentials);
       const response = await apiClient.post("/users/login", credentials);
+      console.log("UserService: API response:", response.data);
 
       // Commented out token storage for now
       // if (response.data.success) {
@@ -75,12 +77,10 @@ export const userService = {
       //   localStorage.setItem("user", JSON.stringify(response.data.user));
       // }
 
-      return {
-        success: true,
-        data: response.data,
-        message: "Login successful",
-      };
+      // Return the response data directly to match backend structure
+      return response.data;
     } catch (error) {
+      console.error("UserService: Login error:", error);
       return {
         success: false,
         error: error.response?.data?.error || error.message || "Login failed",

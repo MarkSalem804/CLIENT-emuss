@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { userService } from "../services/users-service";
 
 const AuthContext = createContext();
 
@@ -38,27 +39,38 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      // Mock login for now - replace with actual API call
-      const mockUser = {
-        id: 1,
-        name: "Dr. Smith",
-        email: credentials.email || "dr.smith@medsystem.com",
-        role: "Administrator",
-        avatar: null,
-      };
+      console.log("AuthContext: Attempting login with:", credentials);
 
-      const mockToken = "mock-jwt-token";
+      // Call the actual login API
+      const result = await userService.loginUser(credentials);
+      console.log("AuthContext: User service result:", result);
 
-      localStorage.setItem("emuss_user", JSON.stringify(mockUser));
-      localStorage.setItem("emuss_token", mockToken);
+      if (result.success) {
+        // Extract user data from the response (backend returns user directly)
+        const userData = result.user;
+        const token = result.token || "dummy-token"; // Use actual token when available
 
-      setIsAuthenticated(true);
-      setUser(mockUser);
+        console.log("AuthContext: Login successful, user data:", userData);
 
-      return { success: true, user: mockUser };
+        // Store user data and token
+        localStorage.setItem("emuss_user", JSON.stringify(userData));
+        localStorage.setItem("emuss_token", token);
+
+        setIsAuthenticated(true);
+        setUser(userData);
+
+        return { success: true, user: userData };
+      } else {
+        // Login failed
+        console.log("AuthContext: Login failed:", result.error);
+        return { success: false, error: result.error };
+      }
     } catch (error) {
-      console.error("Login error:", error);
-      return { success: false, error: error.message };
+      console.error("AuthContext: Login error:", error);
+      return {
+        success: false,
+        error: error.message || "An unexpected error occurred",
+      };
     }
   };
 

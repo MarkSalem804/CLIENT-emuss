@@ -98,13 +98,19 @@ const Login = () => {
     setError("");
 
     try {
+      console.log("Attempting login with:", formData);
       const result = await login(formData);
+      console.log("Login result:", result);
+
       if (result.success) {
+        console.log("Login successful, navigating to dashboard");
         navigate("/dashboard");
       } else {
+        console.log("Login failed:", result.error);
         setError(result.error || "Login failed");
       }
     } catch (err) {
+      console.error("Login error:", err);
       setError("An unexpected error occurred");
     } finally {
       setLoading(false);
@@ -135,7 +141,7 @@ const Login = () => {
           rel="noopener noreferrer"
           className="text-gray-700 font-medium hover:text-emerald-600 transition-colors text-sm lg:text-base"
         >
-          Citizen's Charter
+          Citizen&apos;s Charter
         </a>
         <a
           href="https://csm.depedimuscity.com/"
@@ -409,19 +415,6 @@ const Login = () => {
             </form>
           </div>
 
-          {/* Demo Credentials */}
-          <div className="bg-emerald-50 rounded-lg p-4 text-center border border-emerald-200">
-            <p className="text-sm text-emerald-800 font-medium mb-2">
-              Demo Credentials:
-            </p>
-            <p className="text-xs text-emerald-600">
-              Email: <span className="font-mono">dr.smith@emuss.com</span>
-            </p>
-            <p className="text-xs text-emerald-600">
-              Password: <span className="font-mono">any password</span>
-            </p>
-          </div>
-
           {/* Copyright */}
           <div className="text-center">
             <p className="text-sm text-gray-600 font-medium">
@@ -432,7 +425,7 @@ const Login = () => {
           {/* Footer */}
           <div className="text-center">
             <p className="text-sm text-gray-600 font-medium">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <a
                 href="#"
                 className="font-bold text-emerald-600 hover:text-emerald-800 transition-colors"

@@ -9,6 +9,8 @@ import {
   X,
   CheckCircle,
   AlertCircle,
+  UserPlus,
+  UserEdit,
 } from "lucide-react";
 import { userService } from "../services/users-service";
 import {
@@ -806,8 +808,18 @@ const UsersManagement = () => {
             >
               {/* Modal Header */}
               <div className="p-6 border-b border-gray-200">
-                <h3 className="text-xl font-bold text-slate-800">
-                  {selectedUser ? "Edit User" : "Create New User"}
+                <h3 className="text-xl font-bold text-slate-800 flex items-center gap-3">
+                  {selectedUser ? (
+                    <>
+                      <UserEdit className="w-6 h-6 text-emerald-600" />
+                      Edit User
+                    </>
+                  ) : (
+                    <>
+                      <UserPlus className="w-6 h-6 text-emerald-600" />
+                      Create New User
+                    </>
+                  )}
                 </h3>
               </div>
 
